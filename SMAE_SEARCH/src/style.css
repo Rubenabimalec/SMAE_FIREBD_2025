@@ -1,0 +1,21 @@
+#app {
+  text-align: center;
+  margin-top: 50px;
+}
+
+input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#results {
+  margin-top: 20px;
+}
