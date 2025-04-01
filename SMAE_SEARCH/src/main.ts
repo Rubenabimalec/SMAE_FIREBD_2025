@@ -1,9 +1,9 @@
 import './style.css';
 import { buscarCategoria, buscarAlimento, consumirJSON } from '../src/firebase_json.ts';
-/*consumirJSON()
+consumirJSON()
   .then((data) => console.log("Resultados de consumir json: ", data))
   .catch((error) => console.error("Error:", error));
-*/
+
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <h1>Buscador de Alimentos</h1>
@@ -27,6 +27,8 @@ const allResultDiv = document.querySelector<HTMLDivElement>('#allResult')!;
 
 // Función para mostrar todos los resultados de consumirJSON()
 mostrarTodo.addEventListener('click', async () => {  
+  allResultDiv.innerHTML = ''; // Limpiar antes de agregar nuevos datos
+  searchResultsDiv.innerHTML = ''; // Limpiar búsqueda previa si la hay
   try{
     const todo = await consumirJSON()
     if(todo.length===0){
@@ -38,31 +40,31 @@ mostrarTodo.addEventListener('click', async () => {
         <h3>${elemento.Alimento}</h3>
         <p><strong>Categoria: </strong>${elemento.Categoría}</p>
         <p><strong>Azucar por equivalente G: </strong>${elemento.AzucarPorEquivalenteG}</p>
-        <p><strong>Calcio mg.: </strong>${elemento.Calciomg}</p>
-        <p><strong>Carbohidratos: </strong>${elemento.Cantidad}</p>
-        <p><strong>Colesterol mg.: </strong>${elemento.Carbohidratos}</p>
-        <p><strong>Energía Kcal.: </strong>${elemento.Colesterolmg}</p>
-        <p><strong>Etanol g.: </strong>${elemento.EnergíaKcal}</p>
-        <p><strong>Fibra: </strong>${elemento.Etanolg}</p>
-        <p><strong>Forforo mg.: </strong>${elemento.Fibra}</p>
-        <p><strong>Grasa Monoinsaturada g.: </strong>${elemento.Forforomg}</p>
-        <p><strong>Grasa Saturada g.: </strong>${elemento.GrasaMonoinsaturadag}</p>
-        <p><strong>Hierro mg.: </strong>${elemento.GrasaPoliinsaturadag}</p>
-        <p><strong>Hierro mg.: </strong>${elemento.GrasaSaturadag}</p>
-        <p><strong>: </strong>${elemento.Hierromg}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.IC}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.IG}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.Lípidos}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.PesoBrutoG}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.PesoNetoG}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.Potasiomg}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.Proteína}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.Selenioug}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.Sodiomg}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.Unidad}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.VitaminaAug}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.ÁcidoAscórbicomg}</p>
-        <p><strong>Azucar por equivalente G: </strong>${elemento.ÁcidoFólicoug}</p>
+        <p><strong>Calcio mg. : </strong>${elemento.Calciomg}</p>
+        <p><strong>Cantidad: </strong>${elemento.Cantidad}</p>
+        <p><strong>Carbohidratos: </strong>${elemento.Carbohidratos}</p>
+        <p><strong>Colesterol mg. : </strong>${elemento.Colesterolmg}</p>
+        <p><strong>Energia Kcal. : </strong>${elemento.EnergíaKcal}</p>
+        <p><strong>Etanol g. : </strong>${elemento.Etanolg}</p>
+        <p><strong>Fibra mg. : </strong>${elemento.Fibra}</p>
+        <p><strong>Forforo mg. : </strong>${elemento.Forforomg}</p>
+        <p><strong>Grasa Monoinsaturada g. : </strong>${elemento.GrasaMonoinsaturadag}</p>
+        <p><strong>Grasa Poliinsaturadas g. : </strong>${elemento.GrasaPoliinsaturadag}</p>
+        <p><strong>Grasas saturadas g. : </strong>${elemento.GrasaSaturadag}</p>
+        <p><strong>Hierro mg.: </strong>${elemento.Hierromg}</p>
+        <p><strong>IC: </strong>${elemento.IC}</p>
+        <p><strong>IG: </strong>${elemento.IG}</p>
+        <p><strong>Lipidios: </strong>${elemento.Lípidos}</p>
+        <p><strong>Peso bruto g. : </strong>${elemento.PesoBrutoG}</p>
+        <p><strong>Peso Neto  g. : </strong>${elemento.PesoNetoG}</p>
+        <p><strong>Potasio mg. : </strong>${elemento.Potasiomg}</p>
+        <p><strong>Proteina : </strong>${elemento.Proteína}</p>
+        <p><strong>Selenio g. : </strong>${elemento.Selenioug}</p>
+        <p><strong>sodio mg. : </strong>${elemento.Sodiomg}</p>
+        <p><strong>Unidad : </strong>${elemento.Unidad}</p>
+        <p><strong>Vitamina A g.: </strong>${elemento.VitaminaAug}</p>
+        <p><strong>Ácido Ascórbico mg. : </strong>${elemento.ÁcidoAscórbicomg}</p>
+        <p><strong>Ácido Fólico ug. : </strong>${elemento.ÁcidoFólicoug}</p>
 
         </div>
         `;
@@ -76,7 +78,9 @@ mostrarTodo.addEventListener('click', async () => {
 });
 
 // Función para manejar el clic del botón de búsqueda
-searchButton.addEventListener('click', async () => {  
+searchButton.addEventListener('click', async () => { 
+  searchResultsDiv.innerHTML = ''; // Limpiar antes de mostrar nuevos resultados
+  allResultDiv.innerHTML = ''; // Limpiar los resultados previos de "Mostrar todos"
   const searchTerm = searchInput.value.trim();
   if (searchTerm === '') {
     searchResultsDiv.innerHTML = '<p> ingresa un término de búsqueda.</p>';

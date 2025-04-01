@@ -1,21 +1,60 @@
-#app {
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin-top: 50px;
 }
 
-input {
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-bar input {
+  flex-grow: 1;
   padding: 8px;
-  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-button {
-  padding: 8px 15px;
-  background-color: blue;
-  color: white;
+.search-bar button {
+  padding: 8px 12px;
   border: none;
+  background: blue;
+  color: white;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-#results {
-  margin-top: 20px;
+.search-bar select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#mostrarTodo {
+  margin-top: 10px;
+}
+#allResult {
+  max-height: 400px; /* Limita la altura pero permite desplazamiento */
+  overflow-y: auto; /* Agrega desplazamiento si es necesario */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.food-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.food-item:last-child {
+  border-bottom: none;
 }
