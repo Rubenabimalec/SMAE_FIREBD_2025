@@ -2,7 +2,7 @@
 
 Este proyecto es un buscador de alimentos desarrollado en TypeScript. Permite realizar búsquedas en una base de datos Firebase almacenada en formato JSON mediante peticiones fetch. Para optimizar el rendimiento, los datos se almacenan en un caché local y se pueden consultar por nombre de alimento o verdura, así como obtener el archivo JSON completo con todos sus campos.
 
-##Características
+## Características
 
 -Búsqueda eficiente: Permite buscar alimentos o verduras por nombre en la base de datos Firebase.
 
