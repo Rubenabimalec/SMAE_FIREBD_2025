@@ -7,14 +7,14 @@ import { SmaeResponse } from "./interface/SmaeResponse";
 
 // Configuración de Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyDpl4HRgJ8_PPd2RMZv8cYOYXAlGL2Iu9Q",
+  apiKey: "",
   authDomain: "smae-77888.firebaseapp.com",
   databaseURL: "https://smae-77888-default-rtdb.firebaseio.com/.json",
   projectId: "smae-77888",
   storageBucket: "smae-77888.firebasestorage.app",
-  messagingSenderId: "1040430961669",
-  appId: "1:1040430961669:web:5ad069c8f401062b7a386c",
-  measurementId: "G-3DTNNQG83Q",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: "",
 };
 
 // Inicializa Firebase y Firestore
