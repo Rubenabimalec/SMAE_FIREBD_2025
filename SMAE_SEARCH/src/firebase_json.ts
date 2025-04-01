@@ -6,6 +6,7 @@ import { SmaeResponse } from "./interface/SmaeResponse";
 
 
 // Configuración de Firebase
+//remplace for your json data
 const firebaseConfig = {
   apiKey: "",
   authDomain: "smae-77888.firebaseapp.com",
