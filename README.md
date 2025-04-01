@@ -24,7 +24,7 @@ Este proyecto es un buscador de alimentos desarrollado en TypeScript. Permite re
 
 Clona este repositorio:
 
-git clone https://github.com/tu-usuario/tu-repositorio.git
+git clone: https://github.com/Rubenabimalec/SMAE_FIREBD_2025.git
 cd tu-repositorio
 
 Instala las dependencias:
